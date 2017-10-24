@@ -32,6 +32,7 @@ public class Employee {
     }
 
     public void setName(String name) {
+        if(name != null)
         this.name = name;
     }
 

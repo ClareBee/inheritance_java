@@ -18,10 +18,10 @@ public class EmployeeTest {
     @Before
     public void before() {
         employee = new Employee();
-        manager = new Manager();
-        admin = new Admin();
-        director = new Director();
-        engineer = new Engineer();
+        manager = new Manager(3, "Mr Brown", "332", 20000.00, "Fashion");
+        admin = new Admin(4, "Mr Smith", "445", 10000.00);
+        director = new Director(5, "Mrs Phillips", "320", 40000.00, "Finance", 400000.00);
+        engineer = new Engineer(6, "Mrs Jones", "540", 20000.00);
     }
 
 
@@ -29,9 +29,14 @@ public class EmployeeTest {
 
     @Test
     public void canRaiseSalary() {
-        Manager manager = new Manager(3, "Mr Brown", "332", 20000.00, "Fashion");
         manager.raiseSalary(20000.00);
-        assertEquals(20000.00, manager.getSalary(), 0.1);
+        assertEquals(40000.00, manager.getSalary(), 0.1);
+    }
+
+    @Test
+    public void canSetName() {
+        engineer.setName("Mrs Barrett");
+        assertEquals("Mrs Barrett", engineer.getName());
     }
 
 }
