@@ -20,8 +20,6 @@ public class Employee {
         this.salary = salary;
     }
 
-    protected Employee() {
-    }
 
     public int getId() {
         return id;
@@ -32,7 +30,7 @@ public class Employee {
     }
 
     public void setName(String name) {
-        if(name != null)
+        if(name != null && name != "")
         this.name = name;
     }
 
